@@ -12,6 +12,32 @@ An infinite Canvas App for creating and sharing ideas, notes and 3D models.
 - Infinite canvas for card-based objects, including embedded 3D models
 - Comments and collaboration on cards
 
+### Screenshots
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./public/docs/canvas-screenshot-1-dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="./public/docs/canvas-screenshot-1-light.png">
+  <img alt="Canvas App with some objects and comments" src="./public/docs/canvas-screenshot-1-light.png">
+</picture>
+
+The Canvas App with some objects and comments.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./public/docs/canvas-screenshot-2-dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="./public/docs/canvas-screenshot-2-light.png">
+  <img alt="Canvas App with the comment panel opened" src="./public/docs/canvas-screenshot-2-light.png">
+</picture>
+
+The Canvas App with the comment panel opened.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./public/docs/login-screenshot-1-dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="./public/docs/login-screenshot-1-light.png">
+  <img alt="Canvas App login screen (with samples)" src="./public/docs/login-screenshot-1-light.png">
+</picture>
+
+The Canvas App login screen (with samples).
+
 ## Development Instructions
 
 ### Requirements
