@@ -220,14 +220,10 @@ export const CanvasDocumentObject: FC<CanvasDocumentObjectProps> = ({
   const onRectClickHandler = useCallback(
     (e: KonvaEventObject<PointerEvent, Stage>) => {
       e.cancelBubble = true;
-      console.log("DEBUG: onRectClickHandler", e.target, rectRef.current, textRef.current);
       if (draggable) {
-        console.log("DEBUG: onRectClickHandler - draggable is true");
         if (e.target === rectRef.current || e.target === textRef.current) {
-          console.log("DEBUG: onRectClickHandler - target is rectRef or textRef");
           setSelected((prev) => !prev);
         } else {
-          console.log("DEBUG: onRectClickHandler - target is not rectRef or textRef");
           setSelected(false);
         }
       }
