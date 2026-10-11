@@ -1,5 +1,15 @@
 name: Base Workflow
 
+permissions:
+  actions: write
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "build"
+  cancel-in-progress: true
+
 on:
   push:
     branches:
@@ -11,8 +21,11 @@ on:
   workflow_dispatch:
 
 jobs:
-  test:
-    name: Lint, Test and Build
+  all:
+    name: Lint, Build and Deploy
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -30,3 +43,15 @@ jobs:
 
       - name: Build
         run: pnpm run build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ github.workspace }}/dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
