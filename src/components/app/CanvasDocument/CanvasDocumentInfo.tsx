@@ -2,6 +2,7 @@
 
 import type { ComponentProps, FC } from "react";
 import { useDocumentComments } from "../../../hooks/useDocumentComments.js";
+import { useDocumentObjectIds } from "../../../hooks/useDocumentObjectIds.js";
 import type {
   CanvasDocument,
   CanvasDocumentFields,
@@ -15,6 +16,7 @@ export type CanvasDocumentInfoProps = ComponentProps<"div"> & {
 };
 
 export const CanvasDocumentInfo: FC<CanvasDocumentInfoProps> = ({ canvasDocument }) => {
+  const documentObjectIds = useDocumentObjectIds(canvasDocument.id);
   const { documentCommentsOpenCount, documentCommentsResolvedCount } = useDocumentComments(
     canvasDocument.id,
   );
@@ -33,7 +35,7 @@ export const CanvasDocumentInfo: FC<CanvasDocumentInfoProps> = ({ canvasDocument
             <Username username={canvasDocument.user} />
           </dd>
           <dt>Objects</dt>
-          <dd>{canvasDocument.objects?.length ?? "0"}</dd>
+          <dd>{documentObjectIds.length ?? "0"}</dd>
         </dl>
         <h2 className="mt-3 text-lg pb-2 border-b mb-2">Comments</h2>
         <dl className="grid grid-cols-2 gap-2">
