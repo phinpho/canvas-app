@@ -1,0 +1,187 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.5.15/schema.json",
+  "assist": {
+    "actions": {
+      "source": {
+        "noDuplicateClasses": "on",
+        "organizeImports": "on",
+        "useSortedAttributes": "on",
+        "useSortedInterfaceMembers": "on",
+        "useSortedKeys": "on",
+        "useSortedPackageJson": "on",
+        "useSortedProperties": "on"
+      }
+    },
+    "enabled": true
+  },
+  "css": {
+    "assist": {
+      "enabled": true
+    },
+    "formatter": {
+      "enabled": true,
+      "indentStyle": "space",
+      "indentWidth": 2,
+      "quoteStyle": "double"
+    },
+    "linter": {
+      "enabled": true
+    },
+    "parser": {
+      "tailwindDirectives": true
+    }
+  },
+  "files": {
+    "ignoreUnknown": false,
+    "includes": [
+      "**",
+      "!!**/dist",
+      "!!**/dev-dist",
+      "!!**/node_modules",
+      "!**/*.md",
+      "!**/package-lock.json",
+      "!**/pnpm-lock.json",
+      "!**/yarn.lock"
+    ]
+  },
+  "formatter": {
+    "attributePosition": "auto",
+    "enabled": true,
+    "formatWithErrors": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 100,
+    "useEditorconfig": true
+  },
+  "html": {
+    "assist": {
+      "enabled": true
+    },
+    "experimentalFullSupportEnabled": true,
+    "formatter": {
+      "enabled": true,
+      "indentScriptAndStyle": true,
+      "indentStyle": "space",
+      "indentWidth": 2,
+      "selfCloseVoidElements": "never"
+    },
+    "linter": {
+      "enabled": true
+    }
+  },
+  "javascript": {
+    "assist": {
+      "enabled": true
+    },
+    "formatter": {
+      "enabled": true,
+      "indentStyle": "space",
+      "quoteStyle": "double"
+    },
+    "linter": {
+      "enabled": true
+    },
+    "parser": {
+      "jsxEverywhere": false
+    }
+  },
+  "json": {
+    "assist": {
+      "enabled": true
+    },
+    "formatter": {
+      "bracketSpacing": true,
+      "enabled": true,
+      "indentStyle": "space",
+      "indentWidth": 2,
+      "trailingCommas": "none"
+    },
+    "linter": {
+      "enabled": true
+    }
+  },
+  "linter": {
+    "domains": {
+      "react": "all"
+    },
+    "enabled": true,
+    "rules": {
+      "a11y": "warn",
+      "complexity": {
+        "noArguments": "error",
+        "noBannedTypes": "error",
+        "noForEach": "warn",
+        "noUselessFragments": "warn",
+        "noUselessRename": "warn",
+        "useArrowFunction": "warn",
+        "useSimplifiedLogicExpression": "warn"
+      },
+      "correctness": {
+        "noNestedComponentDefinitions": "error",
+        "noReactPropAssignments": "error",
+        "noRenderReturnValue": "error",
+        "preset": "recommended",
+        "useExhaustiveDependencies": "error",
+        "useHookAtTopLevel": "error",
+        "useImportExtensions": {
+          "level": "error",
+          "options": {
+            "extensionMappings": {
+              "css": "css",
+              "js": "js",
+              "json": "json",
+              "jsx": "js",
+              "ts": "js",
+              "tsx": "js"
+            }
+          }
+        },
+        "useJsonImportAttributes": {
+          "level": "error"
+        }
+      },
+      "nursery": {
+        "noObsoleteTags": "error",
+        "noTailwindRawColors": "error"
+      },
+      "performance": {
+        "noReExportAll": "error",
+        "noSyncScripts": "error"
+      },
+      "preset": "recommended",
+      "style": {
+        "noExportedImports": "error",
+        "useComponentExportOnlyModules": "error",
+        "useExportType": "error",
+        "useImportType": "error",
+        "useReactFunctionComponents": "error"
+      },
+      "suspicious": {
+        "noArrayIndexKey": "off",
+        "noDuplicatedSpreadProps": "error",
+        "noLeakedRender": "error",
+        "noUnknownAttribute": "error"
+      }
+    }
+  },
+  "overrides": [
+    {
+      "assist": {
+        "actions": {
+          "source": {
+            "useSortedKeys": "off"
+          }
+        }
+      },
+      "includes": ["./package.json", "**/package.json"]
+    }
+  ],
+  "root": true,
+  "vcs": {
+    "clientKind": "git",
+    "defaultBranch": "main",
+    "enabled": true,
+    "useIgnoreFile": true
+  }
+}
