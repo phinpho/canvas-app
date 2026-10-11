@@ -67,4 +67,6 @@ In order to take advantage of the multi-threading capabilities of the browser, I
 
 - **Testing**: I will need to implement a comprehensive testing strategy, including unit tests, integration tests, and end-to-end tests, to ensure the application is reliable and maintainable.
 
-- **Split of Concerns**: As the application grows, I may need to refactor the codebase to separate concerns and improve maintainability. This may involve creating separate modules for different features, implementing a state management solution, and improving the overall architecture of the application.
+- **Split of Concerns**: As the application grows, I may need to refactor the codebase to separate concerns and improve maintainability. This may involve creating separate modules for different features, implementing a state management solution, perhaps with a library like Zustand, and improving the overall architecture of the application.
+
+- **Authoring Features**: In order to provide a better experience for users for creating, editing, alone or collaboratively, with features like versioning, undo/redo, and real-time collaboration, I would suggest to use the [Yjs](https://yjs.dev) library, which is a powerful, well-documented, and easy-to-integrate with Dexie.
