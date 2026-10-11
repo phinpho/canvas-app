@@ -18,9 +18,11 @@ const appShortName = packageJson.config?.app?.short_name ?? "Canvas App";
 const appDescription =
   packageJson.config?.app?.description ?? "Infinite canvas with advanced 3D capabilities";
 
+const BASE_URL = process.env.CANVAS_APP_BASE_URL ?? "/";
+
 const config: UserConfig = defineConfig({
   appType: "spa",
-  base: "/",
+  base: BASE_URL,
   build: {
     emitAssets: true,
     emptyOutDir: true,
@@ -88,10 +90,10 @@ const config: UserConfig = defineConfig({
             type: "image/png",
           },
         ],
-        id: "/",
+        id: BASE_URL,
         name: appName,
         short_name: appShortName,
-        start_url: "/",
+        start_url: BASE_URL,
         theme_color: "#22AAFF",
       },
       registerType: "autoUpdate",

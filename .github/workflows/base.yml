@@ -43,6 +43,8 @@ jobs:
 
       - name: Build
         run: pnpm run build
+        env:
+          CANVAS_APP_BASE_URL: "/canvas-app/"
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
