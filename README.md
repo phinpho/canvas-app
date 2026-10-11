@@ -12,6 +12,10 @@ An infinite Canvas App for creating and sharing ideas, notes and 3D models.
 - Infinite canvas for card-based objects, including embedded 3D models
 - Comments and collaboration on cards
 
+### Live Demo
+
+You can access this Canvas App at [https://canvas.phinpho.me](https://canvas.phinpho.me).
+
 ### Screenshots
 
 <picture>
