@@ -1,4 +1,4 @@
-import { createElement, Fragment } from "react";
+import { createElement, StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { App } from "./components/app/App.js";
 import { THEME_DEFAULT } from "./constants/theme/default.js";
@@ -26,7 +26,7 @@ const worker = new MainWorker();
 
 root.render(
   createElement(
-    Fragment,
+    StrictMode,
     null,
     createElement(
       AppProvider,
