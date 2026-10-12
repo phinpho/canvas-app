@@ -54,7 +54,7 @@ export const NavBar: FC<NavBarProps> = ({ id, className, title = __APP_NAME__, .
         >
           <span className="sr-only">Close menu</span>
         </Button>
-        <div className="absolute md:h-full md:w-min md:static inset-bs-16 md:inset-bs-none inset-x-4 md:inset-x-none p-4 md:p-0 border border-sidebar bg-sidebar md:ng-transparent rounded-lg md:rounded-none shadow-lg md:shadow-none">
+        <div className="absolute md:h-full md:w-min md:static inset-bs-16 md:inset-bs-none inset-x-4 md:inset-x-none p-4 md:p-0 border border-sidebar bg-sidebar md:bg-transparent rounded-lg md:rounded-none shadow-lg md:shadow-none">
           <div className="flex flex-row items-center justify-between mb-4 border-b border-sidebar-border pb-2 md:hidden">
             <NavBarTitle />
             <Button

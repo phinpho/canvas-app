@@ -1,5 +1,6 @@
 "use client";
 
+import { cn } from "cn";
 import type { ComponentProps, FC } from "react";
 import { USERS } from "../../../constants/users.js";
 import { useAuth } from "../../../hooks/useAuth.js";
@@ -8,11 +9,11 @@ import { SignInUser } from "./SignInUser.js";
 
 export type SignInProps = Omit<ComponentProps<typeof PageLayout>, "children">;
 
-export const SignIn: FC<SignInProps> = ({ ...props }) => {
+export const SignIn: FC<SignInProps> = ({ className, ...props }) => {
   const { status } = useAuth();
 
   return (
-    <PageLayout {...props} className="[&>main]:justify-center">
+    <PageLayout {...props} className={cn("[&>main]:justify-center", className)}>
       <div className="w-full md:w-3xl p-4 border border-border rounded-lg bg-background shadow-2xs bg-card text-card-foreground">
         <h1 className="text-2xl border-b mb-4 pb-2">Sign in</h1>
         {status === "signedIn" ? (
