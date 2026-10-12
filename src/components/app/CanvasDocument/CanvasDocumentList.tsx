@@ -2,7 +2,6 @@ import { cn } from "cn";
 import { PlusIcon } from "lucide-react";
 import type { ComponentProps, FC } from "react";
 import type { CanvasDocumentFields } from "../../../resources/database/CanvasDocument.js";
-import { ScrollArea } from "../../ui/ScrollArea/ScrollArea.js";
 import { CanvasDocumentCreateDialog } from "./CanvasDocumentCreateDialog.js";
 import { CanvasDocumentListItem } from "./CanvasDocumentListItem.js";
 
@@ -16,17 +15,21 @@ export const CanvasDocumentList: FC<CanvasDocumentListProps> = ({
   ...props
 }) => {
   return (
-    <div className={cn("w-3xl h-auto mx-auto overflow-auto", className)}>
-      <ScrollArea className="w-full h-full">
-        <div {...props} className={cn("grid grid-cols-4 gap-2 pt-4 pb-px px-px", className)}>
-          {canvasDocuments.map((canvasDocument) => (
-            <CanvasDocumentListItem
-              canvasDocument={canvasDocument}
-              key={`canvas-document-${canvasDocument.id}`}
-            />
-          ))}
-        </div>
-      </ScrollArea>
+    <>
+      <div
+        {...props}
+        className={cn(
+          "grid grid-cols-1 w-full md:w-3xl md:grid-cols-2 lg:grid-cols-3 gap-4",
+          className,
+        )}
+      >
+        {canvasDocuments.map((canvasDocument) => (
+          <CanvasDocumentListItem
+            canvasDocument={canvasDocument}
+            key={`canvas-document-${canvasDocument.id}`}
+          />
+        ))}
+      </div>
       <CanvasDocumentCreateDialog
         className="fixed bottom-4 right-4 rounded-full"
         size="icon-lg"
@@ -35,7 +38,7 @@ export const CanvasDocumentList: FC<CanvasDocumentListProps> = ({
         <PlusIcon />
         <span className="sr-only">Create new Canvas</span>
       </CanvasDocumentCreateDialog>
-    </div>
+    </>
   );
 };
 
