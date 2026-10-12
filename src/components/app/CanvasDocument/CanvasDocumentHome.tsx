@@ -8,7 +8,7 @@ import { CanvasDocumentList } from "./CanvasDocumentList.js";
 
 export type CanvasDocumentHomeProps = Omit<ComponentProps<typeof PageLayout>, "children">;
 
-export const CanvasDocumentHome: FC<CanvasDocumentHomeProps> = ({ className, ...props }) => {
+export const CanvasDocumentHome: FC<CanvasDocumentHomeProps> = ({ ...props }) => {
   const { canvasDocumentItems, status } = useCanvasDocuments();
 
   return (

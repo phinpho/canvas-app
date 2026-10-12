@@ -32,6 +32,7 @@ export const NavBarUserMenu: FC<NavBarUserMenuProps> = ({
             <User2Icon />
           </span>
         )}
+        <span className="sr-only">User menu</span>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-56">
         {user ? (
