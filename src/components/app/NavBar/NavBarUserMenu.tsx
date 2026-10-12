@@ -1,7 +1,8 @@
 "use client";
 
-import { DoorClosedIcon } from "lucide-react";
+import { DoorClosedIcon, User2Icon } from "lucide-react";
 import type { ComponentProps, FC } from "react";
+import { NavLink } from "react-router";
 import { useAuth } from "../../../hooks/useAuth.js";
 import { Button } from "../../ui/Button/Button.js";
 import { DropdownMenu } from "../../ui/DropdownMenu/DropdownMenu.js";
@@ -21,28 +22,38 @@ export const NavBarUserMenu: FC<NavBarUserMenuProps> = ({
 }) => {
   const { user, signOut } = useAuth();
 
-  if (!user) return null;
-
   return (
     <DropdownMenu>
       <DropdownMenuTrigger render={<Button {...props} size={size} variant={variant} />}>
-        <UserAvatar username={user.username} />
+        {user ? (
+          <UserAvatar username={user.username} />
+        ) : (
+          <span className="rounded-full aspect-square size-8 flex items-center justify-center bg-muted text-muted-foreground">
+            <User2Icon />
+          </span>
+        )}
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-56">
-        <DropdownMenuGroup>
-          <DropdownMenuItem>
-            <UserAvatar username={user.username} />
-            <div className="flex flex-col">
-              <span className="font-semibold">{user.name}</span>
-              <span className="text-sm text-muted-foreground">@{user.username}</span>
-            </div>
-          </DropdownMenuItem>
-        </DropdownMenuGroup>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem onClick={signOut} variant="destructive">
-          <DoorClosedIcon />
-          Logout
-        </DropdownMenuItem>
+        {user ? (
+          <>
+            <DropdownMenuGroup>
+              <DropdownMenuItem>
+                <UserAvatar username={user.username} />
+                <div className="flex flex-col">
+                  <span className="font-semibold">{user.name}</span>
+                  <span className="text-sm text-muted-foreground">@{user.username}</span>
+                </div>
+              </DropdownMenuItem>
+            </DropdownMenuGroup>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem onClick={signOut} variant="destructive">
+              <DoorClosedIcon />
+              Logout
+            </DropdownMenuItem>
+          </>
+        ) : (
+          <DropdownMenuItem render={<NavLink to="/login" />}>Sign in</DropdownMenuItem>
+        )}
       </DropdownMenuContent>
     </DropdownMenu>
   );
