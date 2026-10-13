@@ -1,7 +1,7 @@
 "use client";
 
 import { MenuIcon, XIcon } from "lucide-react";
-import type { ComponentProps, FC, ReactNode } from "react";
+import type { ComponentProps, FC } from "react";
 import { useCurrentId } from "../../../hooks/useCurrentId.js";
 import { useIsMobile } from "../../../hooks/useIsMobile.js";
 import { Button } from "../../ui/Button/Button.js";
@@ -11,12 +11,9 @@ import { NavBarTitle } from "./NavBarTitle.js";
 export type NavBarListProps = Omit<
   ComponentProps<"nav">,
   "popover" | "popoverTarget" | "popoverTargetAction"
-> & {
-  appTitle?: ReactNode;
-};
+>;
 
 export const NavBarList: FC<NavBarListProps> = ({
-  appTitle,
   id,
   className,
   children,
