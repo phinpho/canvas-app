@@ -9,7 +9,7 @@ export const PageCard: FC<PageCardProps> = ({ className, ...props }) => {
       data-slot="page-card"
       {...props}
       className={cn(
-        "w-full md:w-3xl p-4 border border-border rounded-lg bg-background shadow-2xs bg-card text-card-foreground shadow-lg",
+        "w-full max-w-3xl p-4 border border-border rounded-lg bg-background shadow-2xs bg-card text-card-foreground shadow-lg",
         className,
       )}
     />
