@@ -1,5 +1,6 @@
 "use client";
 
+import { cn } from "cn";
 import { MenuIcon, XIcon } from "lucide-react";
 import type { ComponentProps, FC } from "react";
 import { useCurrentId } from "../../../hooks/useCurrentId.js";
@@ -39,13 +40,14 @@ export const NavBarList: FC<NavBarListProps> = ({
         </Button>
         <NavBarTitle className="hidden md:flex" />
       </div>
-      {!isMobilePending && isMobileState && Boolean(title) && (
-        <NavBarPageTitle>{title}</NavBarPageTitle>
-      )}
+      {Boolean(title) && <NavBarPageTitle className="md:sr-only">{title}</NavBarPageTitle>}
       <nav
         {...props}
         aria-label={ariaLabel}
-        className="md:ml-auto inset-0 w-full md:w-min md:inset-none h-full bg-transparent"
+        className={cn(
+          "md:ml-auto inset-0 w-full md:w-min md:inset-none h-full bg-transparent",
+          className,
+        )}
         hidden={isMobilePending}
         id={currentId}
         popover={isMobileState ? "auto" : undefined}
