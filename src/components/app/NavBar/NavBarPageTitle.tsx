@@ -1,11 +1,11 @@
 import { cn } from "cn";
 import type { ComponentProps, FC } from "react";
 
-export type NavBarPageTitleProps = ComponentProps<"h1">;
+export type NavBarPageTitleProps = ComponentProps<"h2">;
 
 export const NavBarPageTitle: FC<NavBarPageTitleProps> = ({ className, children, ...props }) => {
   return (
-    <h1
+    <h2
       {...props}
       className={cn(
         "text-lg lg:text-xl font-bold text-center h-full flex items-center justify-center",
@@ -13,7 +13,7 @@ export const NavBarPageTitle: FC<NavBarPageTitleProps> = ({ className, children,
       )}
     >
       {children}
-    </h1>
+    </h2>
   );
 };
 

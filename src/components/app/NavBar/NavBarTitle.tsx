@@ -22,11 +22,13 @@ export const NavBarTitle: FC<NavBarTitleProps> = ({
       viewTransition={viewTransition}
     >
       <img
-        alt="logo"
+        alt=""
         className="inline-block size-10 object-center rounded-lg"
         src="/pwa-512x512.png"
       />
-      <span className="text-xl lg:text-2xl font-bold h-full">{__APP_NAME__}</span>
+      <span className="text-xl lg:text-2xl font-bold h-full text-card-foreground dark:text-card-foreground">
+        {__APP_NAME__}
+      </span>
     </NavLink>
   );
 };
