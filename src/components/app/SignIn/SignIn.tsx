@@ -4,6 +4,8 @@ import { cn } from "cn";
 import type { ComponentProps, FC } from "react";
 import { USERS } from "../../../constants/users.js";
 import { useAuth } from "../../../hooks/useAuth.js";
+import { PageCard } from "../Layout/PageCard.js";
+import { PageCardTitle } from "../Layout/PageCardTitle.js";
 import { PageLayout } from "../Layout/PageLayout.js";
 import { SignInUser } from "./SignInUser.js";
 
@@ -14,8 +16,8 @@ export const SignIn: FC<SignInProps> = ({ className, ...props }) => {
 
   return (
     <PageLayout {...props} className={cn("[&>main]:justify-center", className)}>
-      <div className="w-full md:w-3xl p-4 border border-border rounded-lg bg-background shadow-2xs bg-card text-card-foreground">
-        <h1 className="text-2xl border-b mb-4 pb-2">Sign in</h1>
+      <PageCard>
+        <PageCardTitle>Sign in</PageCardTitle>
         {status === "signedIn" ? (
           <p>Redirecting...</p>
         ) : status === "loading" ? (
@@ -30,7 +32,7 @@ export const SignIn: FC<SignInProps> = ({ className, ...props }) => {
             </div>
           </>
         )}
-      </div>
+      </PageCard>
     </PageLayout>
   );
 };
