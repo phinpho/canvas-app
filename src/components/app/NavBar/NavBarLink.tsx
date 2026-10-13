@@ -1,6 +1,5 @@
 "use client";
 
-import { cn } from "cn";
 import type { ComponentProps, FC } from "react";
 import { NavLink, type NavLinkProps } from "react-router";
 import { Button } from "../../ui/Button/Button.js";
@@ -10,22 +9,11 @@ export type NavBarLinkProps = ComponentProps<"li"> & {
   viewTransition?: NavLinkProps["viewTransition"];
 };
 
-export const NavBarLink: FC<NavBarLinkProps> = ({
-  to,
-  viewTransition,
-  children,
-  className,
-  ...props
-}) => {
+export const NavBarLink: FC<NavBarLinkProps> = ({ to, viewTransition, children, ...props }) => {
   return (
-    <li
-      {...props}
-      className={cn(
-        "has-aria-[current=page]:bg-primary has-aria-[current=page]:text-primary-foreground rounded-md",
-        className,
-      )}
-    >
+    <li {...props}>
       <Button
+        className="text-foreground aria-[current=page]:bg-primary aria-[current=page]:text-primary-foreground dark:aria-[current=page]:bg-primary dark:aria-[current=page]:text-primary-foreground"
         nativeButton={false}
         render={<NavLink to={to} viewTransition={viewTransition} />}
         variant="ghost"
