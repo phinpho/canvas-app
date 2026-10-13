@@ -1,0 +1,72 @@
+name: Deploy Workflow
+
+permissions:
+  actions: write
+  contents: read
+
+concurrency:
+  group: "deploy"
+  cancel-in-progress: true
+
+on:
+  push:
+    branches:
+      - main
+  workflow_call:
+  workflow_dispatch:
+
+jobs:
+  lint-and-build:
+    name: Lint and Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup PNPM
+        uses: pnpm/setup@v1
+        with:
+          runtime: node@22
+          cache: true
+          install: true
+
+      - name: Lint
+        run: pnpm run lint
+
+      - name: Build
+        run: pnpm run build
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v7
+        with:
+          retention-days: 1
+          name: canvas-app-artifact
+          path: ${{ github.workspace }}/dist
+  deploy:
+    name: Deploy
+    needs: lint-and-build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Download Artifact
+        uses: actions/download-artifact@v8
+        with:
+          name: canvas-app-artifact
+          path: ${{ github.workspace }}/dist
+
+      - name: Configure Environment
+        uses: actions/configure-pages@v6
+
+      - name: Upload Artifact to Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ github.workspace }}/dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
