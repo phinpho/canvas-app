@@ -1,16 +1,11 @@
 name: General Workflow
 
 permissions:
-  actions: write
   contents: read
-  id-token: write
 
 on:
   push:
     branches-ignore:
-      - main
-  pull_request:
-    branches:
       - main
 
 jobs:
