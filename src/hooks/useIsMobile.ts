@@ -23,10 +23,8 @@ export const useIsMobile = <T extends boolean | undefined = undefined>(
   useEffect(() => {
     const mql = globalThis.matchMedia(`(max-width: ${MOBILE_BREAKPOINT - 1}px)`);
     mql.addEventListener("change", onMediaQueryChangeHandler);
-    if (globalThis.innerHeight) {
-      setIsMobile(globalThis.innerWidth < MOBILE_BREAKPOINT);
-      setIsPending(false);
-    }
+    setIsMobile(globalThis.innerWidth < MOBILE_BREAKPOINT);
+    setIsPending(false);
 
     return () => {
       mql.removeEventListener("change", onMediaQueryChangeHandler);
