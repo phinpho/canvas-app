@@ -16,8 +16,9 @@ export const Button: FC<ButtonProps> = ({
   className,
   variant = "default",
   size = "default",
-  type = "button",
+  type,
   ref,
+  role,
   ...props
 }) => {
   return (
@@ -26,7 +27,8 @@ export const Button: FC<ButtonProps> = ({
       {...props}
       className={cn(buttonVariants({ size, variant }), className)}
       ref={ref}
-      type={type}
+      role={role}
+      type={(role === undefined || role === "button") && type === undefined ? "button" : type}
     />
   );
 };
