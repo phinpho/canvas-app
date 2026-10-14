@@ -16,6 +16,7 @@ export const NavBarLink: FC<NavBarLinkProps> = ({ to, viewTransition, children, 
         className="text-foreground aria-[current=page]:bg-primary aria-[current=page]:text-primary-foreground dark:aria-[current=page]:bg-primary dark:aria-[current=page]:text-primary-foreground"
         nativeButton={false}
         render={<NavLink to={to} viewTransition={viewTransition} />}
+        role="link"
         variant="ghost"
       >
         {children}
