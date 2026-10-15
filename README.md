@@ -19,17 +19,25 @@ You can access this Canvas App at [https://canvas.phinpho.me](https://canvas.phi
 ### Screenshots
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./public/docs/canvas-screenshot-1-dark.png">
-  <source media="(prefers-color-scheme: light)" srcset="./public/docs/canvas-screenshot-1-light.png">
-  <img alt="Canvas App with some objects and comments" src="./public/docs/canvas-screenshot-1-light.png">
+  <source media="(prefers-color-scheme: dark)" srcset="./public/docs/home-screenshot-1-dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="./public/docs/home-screenshot-1-light.png">
+  <img alt="Canvas App home screen" src="./public/docs/home-screenshot-1-light.png">
+</picture>
+
+The Canvas App home screen
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./public/docs/document-screenshot-1-dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="./public/docs/document-screenshot-1-light.png">
+  <img alt="Canvas App with some objects and comments" src="./public/docs/document-screenshot-1-light.png">
 </picture>
 
 The Canvas App with some objects and comments.
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./public/docs/canvas-screenshot-2-dark.png">
-  <source media="(prefers-color-scheme: light)" srcset="./public/docs/canvas-screenshot-2-light.png">
-  <img alt="Canvas App with the comment panel opened" src="./public/docs/canvas-screenshot-2-light.png">
+  <source media="(prefers-color-scheme: dark)" srcset="./public/docs/document-screenshot-2-dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="./public/docs/document-screenshot-2-light.png">
+  <img alt="Canvas App with the comment panel opened" src="./public/docs/document-screenshot-2-light.png">
 </picture>
 
 The Canvas App with the comment panel opened.
@@ -71,7 +79,6 @@ The Canvas App login screen (with samples).
    pnpm dev
    ```
 2. Open your browser and navigate to `http://localhost:5173/` to view the application.
-   > [!NOTE]
    > If the port `5173` is already in use, the development server will automatically
    > select a next available port, normally incremented by `1`. You can check the
    > terminal output to see the actual port being used:
@@ -98,7 +105,6 @@ The Canvas App login screen (with samples).
    ```bash
    pnpm dlx serve -s dist
    ```
-   > [!NOTE]
    > The command above will not install the `serve` package. It downloads and runs it directly
    > using `pnpm dlx`. If you want to install it globally, you can run:
    >
